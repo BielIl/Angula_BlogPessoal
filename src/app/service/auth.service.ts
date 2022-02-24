@@ -13,13 +13,13 @@ export class AuthService {
 
   entrar(userlogin: UserLogin): Observable<UserLogin> {
     return this.http.post<UserLogin>(
-      'http://local:8080/usuarios/logar',
+      'http://localhost:8080/usuarios/logar',
       userlogin
     );
   }
 
   cadastrar(user: User): Observable<User> {
-    return this.http.post<User>('http://local:8080/usuarios/cadatrar', user);
+    return this.http.post<User>('http://localhost:8080/usuarios/cadatrar', user);
   }
 
   logado() {
