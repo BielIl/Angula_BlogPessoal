@@ -19,22 +19,21 @@ export class EntrarComponent implements OnInit {
   }
 
   entrar() {
-    this.auth.entrar(this.userLogin).subscribe(
-      (resp: UserLogin) => {
+    this.auth.entrar(this.userLogin).subscribe({
+      next: (resp: UserLogin) => {
         this.userLogin = resp;
 
-        environment.token = this.userLogin.token;
-        environment.nome = this.userLogin.nome;
         environment.foto = this.userLogin.foto;
         environment.id = this.userLogin.id;
-
-        this.router.navigate(['/inicio']);
+        environment.nome = this.userLogin.nome;
+        environment.token = this.userLogin.token;
+        environment.tipo = this.userLogin.tipo;
       },
-      (erro) => {
+      error: (erro) => {
         if (erro.status == 401) {
-          alert('Usuario ou senha estao incorreto');
+          alert('usuario ou senha invalido');
         }
-      }
-    );
+      },
+    });
   }
 }
