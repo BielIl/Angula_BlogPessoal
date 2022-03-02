@@ -13,13 +13,13 @@ export class AuthService {
 
   entrar(userlogin: UserLogin): Observable<UserLogin> {
     return this.http.post<UserLogin>(
-      'http://localhost:8080/usuarios/logar',
+      'https://blogpessoalgabriel.herokuapp.com/usuarios/logar',
       userlogin
     );
   }
 
   cadastrar(user: User): Observable<User> {
-    return this.http.post<User>('http://localhost:8080/usuarios/cadatrar', user);
+    return this.http.post<User>('https://blogpessoalgabriel.herokuapp.com/usuarios/cadastrar', user);
   }
 
   logado() {
