@@ -3,3 +3,23 @@
 html {
   scroll-behavior: smooth;
 }
+
+.nwc {
+  color: #FBFFFF
+}
+
+.dbbg {
+  background-color: #000023;
+}
+
+.dbc {
+  color: #000023;
+}
+
+.fs-54 {
+  font-size: 54pt;
+}
+
+.fs-18 {
+  font-size: 18pt;
+}
