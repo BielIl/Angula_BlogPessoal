@@ -22,7 +22,7 @@ export class EntrarComponent implements OnInit {
     this.auth.entrar(this.userLogin).subscribe({
       next: (resp: UserLogin) => {
         this.userLogin = resp;
-        this.router.navigate(['/inicio'])
+        this.router.navigate(['/inicio']);
 
         environment.foto = this.userLogin.foto;
         environment.id = this.userLogin.id;

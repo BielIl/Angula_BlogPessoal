@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-tema-delete',
   templateUrl: './tema-delete.component.html',
-  styleUrls: ['./tema-delete.component.css']
+  styleUrls: ['./tema-delete.component.css'],
 })
 export class TemaDeleteComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
