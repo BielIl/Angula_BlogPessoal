@@ -1,1 +1,47 @@
-<p>tema-delete works!</p>
+<div class="container mt-5 mb-5">
+
+  <div class="row mb-2">
+
+    <div class="col-md-12">
+
+      <h1 class="text-center dbc">
+        Apagar Tema
+      </h1>
+
+
+    </div>
+
+  </div>
+
+  <div class="row am">
+
+    <div class="col-md-12">
+      <h4 class="text-center dbc">
+        Voce tem certeza que deseja apagar o tema? Todas as postagens relacionadas a ele seram deletadas
+      </h4>
+    </div>
+  </div>
+
+  <div class="row am">
+    <div class="col-md-12">
+      <h5 class="text-center text-info">
+        Tema: {{tema.descricao}}
+      </h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-center">
+
+      <button class="btn btn-danger am" routerLink="/tema">
+        Sim Apagar
+      </button>
+
+      <button class="btn btn-success am" (click)="apagar()">
+        Não apagar
+      </button>
+
+    </div>
+  </div>
+
+</div>
