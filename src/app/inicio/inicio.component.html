@@ -15,7 +15,8 @@
           <button
             class="btn btn-outline-light"
             data-toggle="modal"
-            data-target="#novaPostagem">
+            data-target="#novaPostagem"
+          >
             Nova Postagem
           </button>
 
@@ -137,7 +138,7 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="titulo">Título</label>
-          <input
+          <input  [(ngModel)]="postagem.titulo"
             type="text"
             class="form-control"
             id="titulo"
@@ -147,7 +148,7 @@
 
         <div class="form-group">
           <label for="titulo">Texto</label>
-          <textarea
+          <textarea [(ngModel)]="postagem.texto"
             class="form-control"
             name="texto"
             id="texto"
@@ -161,8 +162,11 @@
             <a data-dismiss="modal" routerLink="/tema">cadastre um novo </a
             >:</label
           >
-          <select class="ml-1" name="tema" id="tema">
-            <option value="">Tema</option>
+          <select class="ml-1" name="tema" id="tema" [(ngModel)]="idTema" (change)="findByIdTema()">
+            <option *ngfor="let item of listaTemas"
+            value="{{item.id}}">
+              {{item.descricao}}
+            </option>
           </select>
         </div>
       </div>
@@ -172,7 +176,7 @@
           Cancelar
         </button>
 
-        <button type="button" class="btn btn-success">Publicar</button>
+        <button type="button" class="btn btn-success" (click)="publicar()" data-dismiss="modal">Publicar</button>
       </div>
     </div>
   </div>
