@@ -23,3 +23,10 @@ html {
 .fs-18 {
   font-size: 18pt;
 }
+
+.am {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
