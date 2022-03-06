@@ -193,7 +193,7 @@
             [(ngModel)]="idTema"
             (change)="findByIdTema()"
           >
-            <option *ngfor="let item of listaTemas" value="{{ item.id }}">
+          <option *ngFor="let item of listaTemas" value="{{ item.id }}">
               {{ item.descricao }}
             </option>
           </select>
