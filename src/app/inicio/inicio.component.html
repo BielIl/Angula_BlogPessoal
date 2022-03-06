@@ -90,11 +90,11 @@
         <div class="card text-center" *ngFor="let item of listaPostagens">
           <div class="card-body">
             <h5 class="card-title">
-              {{ item.titulo }}
+              {{ item.tituloPostagem }}
             </h5>
 
             <p class="card-text">
-              {{ item.texto }}
+              {{ item.textoPostagem }}
             </p>
 
             <p class="card-text">
@@ -144,7 +144,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="TituloModalCentralizado">
-          Título do modal
+          Nova Postagem
         </h5>
 
         <button
@@ -161,7 +161,7 @@
         <div class="form-group">
           <label for="titulo">Título</label>
           <input
-            [(ngModel)]="postagem.titulo"
+            [(ngModel)]="postagem.tituloPostagem"
             type="text"
             class="form-control"
             id="titulo"
@@ -172,7 +172,7 @@
         <div class="form-group">
           <label for="titulo">Texto</label>
           <textarea
-            [(ngModel)]="postagem.texto"
+            [(ngModel)]="postagem.textoPostagem"
             class="form-control"
             name="texto"
             id="texto"
