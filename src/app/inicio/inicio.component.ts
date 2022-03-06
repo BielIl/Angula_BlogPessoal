@@ -14,10 +14,14 @@ import { TemaService } from '../service/tema.service';
 })
 export class InicioComponent implements OnInit {
   postagem: Postagem = new Postagem();
-  listaTemas: Tema[];
-  idTema: number;
   tema: Tema = new Tema();
   user: User = new User();
+
+  listaTemas: Tema[];
+  listaPostagens: Postagem[];
+
+  idTema: number;
+
   idUser = environment.id;
 
   constructor(
@@ -30,12 +34,19 @@ export class InicioComponent implements OnInit {
     if (environment.token == '') {
       this.router.navigate(['/entrar']);
     }
-    this.getAllTema;
+    this.getAllTema();
+    this.getAllPostagens();
   }
 
   getAllTema() {
     this.temaSerive.getAllTema().subscribe((resp: Tema[]) => {
       this.listaTemas = resp;
+    });
+  }
+
+  getAllPostagens() {
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp;
     });
   }
 
@@ -56,8 +67,9 @@ export class InicioComponent implements OnInit {
       .postPostagem(this.postagem)
       .subscribe((resp: Postagem) => {
         this.postagem = resp;
-        alert('Postagem Realizada com Sucesso');
+        alert('Postagem realizada com sucesso!');
         this.postagem = new Postagem();
+        this.getAllPostagens();
       });
   }
 }

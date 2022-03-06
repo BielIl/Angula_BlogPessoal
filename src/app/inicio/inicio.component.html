@@ -86,7 +86,29 @@
       role="tabpanel"
       aria-labelledby="nav-todaspostagens-tab"
     >
-      todas as postegns
+      <div class="card-columns">
+        <div class="card text-center" *ngFor="let item of listaPostagens">
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ item.titulo }}
+            </h5>
+
+            <p class="card-text">
+              {{ item.texto }}
+            </p>
+
+            <p class="card-text">
+              <small class="text-muted">
+                {{ item.data }}
+              </small>
+            </p>
+
+            <p class="card-text">
+              <small class="text-muted"> By: {{ item.usuario.nome }} </small>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div
@@ -138,7 +160,8 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="titulo">Título</label>
-          <input  [(ngModel)]="postagem.titulo"
+          <input
+            [(ngModel)]="postagem.titulo"
             type="text"
             class="form-control"
             id="titulo"
@@ -148,7 +171,8 @@
 
         <div class="form-group">
           <label for="titulo">Texto</label>
-          <textarea [(ngModel)]="postagem.texto"
+          <textarea
+            [(ngModel)]="postagem.texto"
             class="form-control"
             name="texto"
             id="texto"
@@ -162,10 +186,15 @@
             <a data-dismiss="modal" routerLink="/tema">cadastre um novo </a
             >:</label
           >
-          <select class="ml-1" name="tema" id="tema" [(ngModel)]="idTema" (change)="findByIdTema()">
-            <option *ngfor="let item of listaTemas"
-            value="{{item.id}}">
-              {{item.descricao}}
+          <select
+            class="ml-1 form-control"
+            name="tema"
+            id="tema"
+            [(ngModel)]="idTema"
+            (change)="findByIdTema()"
+          >
+            <option *ngfor="let item of listaTemas" value="{{ item.id }}">
+              {{ item.descricao }}
             </option>
           </select>
         </div>
@@ -176,7 +205,14 @@
           Cancelar
         </button>
 
-        <button type="button" class="btn btn-success" (click)="publicar()" data-dismiss="modal">Publicar</button>
+        <button
+          type="button"
+          class="btn btn-success"
+          (click)="publicar()"
+          data-dismiss="modal"
+        >
+          Publicar
+        </button>
       </div>
     </div>
   </div>
